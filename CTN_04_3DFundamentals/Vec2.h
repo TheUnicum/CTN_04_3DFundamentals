@@ -26,7 +26,8 @@ template <typename T>
 class _Vec2
 {
 public:
-	_Vec2() {}
+	_Vec2()
+	{}
 	_Vec2( T x,T y )
 		:
 	x( x ),
@@ -123,6 +124,10 @@ public:
 	bool	operator!=(const _Vec2 &rhs) const
 	{
 		return !(*this == rhs);
+	}
+	_Vec2	InterpolateTo(const _Vec2& dest, T alpha) const
+	{
+		return *this + (dest - *this) * alpha;
 	}
 public:
 	T x;
