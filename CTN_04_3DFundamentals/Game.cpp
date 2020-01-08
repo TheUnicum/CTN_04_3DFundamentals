@@ -71,9 +71,15 @@ void Game::ComposeFrame()
 {
 	auto lines = cube.GetLines();
 	const Mat3 rot =
-		Mat3::RotationX(theta_x) *
-		Mat3::RotationY(theta_y) *
-		Mat3::RotationZ(theta_z);
+		!wnd.kbd.KeyIsPressed(VK_CONTROL)
+		?
+		(Mat3::RotationX(theta_x) *
+		 Mat3::RotationY(theta_y) *
+		 Mat3::RotationZ(theta_z))
+		:
+		(Mat3::RotationY(theta_y) *
+		 Mat3::RotationZ(theta_z) *
+		 Mat3::RotationX(theta_x));
 	for (auto& v : lines.vertices)
 	{
 		v *= rot;
