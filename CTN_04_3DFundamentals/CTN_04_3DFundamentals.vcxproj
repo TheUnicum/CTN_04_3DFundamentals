@@ -156,6 +156,7 @@
     <ClInclude Include="ChiliWin.h" />
     <ClInclude Include="Colors.h" />
     <ClInclude Include="Cube.h" />
+    <ClInclude Include="CubeSolidScene.h" />
     <ClInclude Include="CubeVertexColorScene.h" />
     <ClInclude Include="DXErr.h" />
     <ClInclude Include="CubeSkinScene.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SolidEffect.h" />
     <ClInclude Include="Surface.h" />
     <ClInclude Include="TextureEffect.h" />
     <ClInclude Include="Triangle.h" />
