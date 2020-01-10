@@ -16,7 +16,7 @@ public:
 		:
 		itlist(Cube::GetPlain<Vertex>()),
 		pipeline(gfx),
-		Scene("Colored cube vertex gradient scene")
+		Scene("Cube vertex position color scene")
 	{
 		itlist.vertices[0].color = Vec3(Colors::Red);
 		itlist.vertices[1].color = Vec3(Colors::Green);
