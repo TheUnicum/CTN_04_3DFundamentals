@@ -66,12 +66,13 @@ private:
 		for (size_t i = 0, end = indices.size() / 3;
 			i < end; i++)
 		{
+			const auto eyepos = Vec4{ 0.0f,0.0f,0.0f,1.0f } *effect.vs.GetProj();
 			// determine triangle vertices via indexing
 			const auto& v0 = vertices[indices[i * 3]];
 			const auto& v1 = vertices[indices[i * 3 + 1]];
 			const auto& v2 = vertices[indices[i * 3 + 2]];
 			// cull backfacing triangles with cross product (%) shenanigans
-			if ((v1.pos - v0.pos) % (v2.pos - v0.pos) * v0.pos <= 0.0f)
+			if ((v1.pos - v0.pos) % (v2.pos - v0.pos) * Vec3(v0.pos - eyepos) <= 0.0f)
 			{
 				// process 3 vertices into a triangle
 				ProcessTriangle(v0, v1, v2, i);
